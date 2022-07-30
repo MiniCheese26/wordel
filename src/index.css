@@ -22,6 +22,6 @@
 
 @layer components {
   body {
-    @apply overflow-auto subpixel-antialiased;
+    @apply subpixel-antialiased;
   }
 }
