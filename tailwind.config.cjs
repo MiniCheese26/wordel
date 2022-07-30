@@ -14,12 +14,15 @@ module.exports = {
         darkHighlightDim: '#4B504F',
         darkHighlightActive: '#454948',
         darkHighlightBorder: '#646B68',
+        darker: '#313433',
         white: '#F6F7F8',
         whiteFg: '#313638',
         whiteHighlight: '#DCD8D8',
         whiteHighlightDim: '#CCC6C6',
-        whiteHighlightActive: '#BFB7B7',
-        whiteHighlightBorder: '#BFB7B7',
+        whiteHighlightActive: '#D0CACA',
+        whiteHighlightBorder: '#A49898',
+        yellow: '#EAA31F',
+        green: '#558B6E'
       }
     },
   },

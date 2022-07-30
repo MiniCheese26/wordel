@@ -2,10 +2,11 @@ import Words from 'lib/Game/Words';
 import Keyboard from 'lib/Keyboard/Keyboard';
 import {LETTERS} from 'lib/constants';
 import useStateRef from 'react-usestateref';
-import {useRef} from 'react';
+import {useRef, useState} from 'react';
 
 const Game = () => {
   const [words, setWords, wordsRef] = useStateRef<string[]>([]);
+  const [linesSubmitted, setLinesSubmitted] = useState<number[]>([]);
   const currentLine = useRef(0);
 
   const onKeyDown = (letter: string) => {
@@ -15,6 +16,8 @@ const Game = () => {
         return;
       }
 
+      // Why do I need - 1?
+      setLinesSubmitted((prev) => [...prev,  currentLine.current - 1]);
       currentLine.current += 1;
     } else if (letter === 'backspace') {
       setWords((prev) => {
@@ -48,7 +51,7 @@ const Game = () => {
   return (
     <>
       <div className="flex justify-center items-center flex-[5]">
-        <Words words={words} />
+        <Words words={words} linesSubmitted={linesSubmitted} />
       </div>
       <div className="flex items-center justify-center flex-1">
         <Keyboard onKeyDown={onKeyDown} />
