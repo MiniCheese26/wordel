@@ -20,6 +20,13 @@
   font-family: 'Lato', sans-serif;
 }
 
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+  }
+}
+
 @layer components {
   body {
     @apply subpixel-antialiased;

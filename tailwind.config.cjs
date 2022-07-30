@@ -12,10 +12,12 @@ module.exports = {
         darkFg: '#F6F7F8',
         darkHighlight: '#585E5C',
         darkHighlightDim: '#4B504F',
+        darkHighlightActive: '#454948',
         white: '#F6F7F8',
         whiteFg: '#313638',
         whiteHighlight: '#DCD8D8',
         whiteHighlightDim: '#CCC6C6',
+        whiteHighlightActive: '#BFB7B7',
       }
     },
   },
