@@ -1,5 +1,5 @@
 import {IconBackspace} from '@tabler/icons';
-import React, {useEffect} from 'react';
+import React from 'react';
 
 type Props = {
   letter: string,
@@ -15,12 +15,6 @@ const Letter = ({ letter, onKeyDown }: Props) => {
     override = <IconBackspace size={30} />;
   }
 
-  const onKeyDownHandler = (e: KeyboardEvent) => {
-    if (e.key === letter) {
-      onKeyDown(letter);
-    }
-  };
-
   const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     let parsedLetter = letter;
@@ -33,14 +27,6 @@ const Letter = ({ letter, onKeyDown }: Props) => {
 
     onKeyDown(parsedLetter);
   };
-
-  useEffect(() => {
-    window.addEventListener('keydown', onKeyDownHandler);
-
-    return () => {
-      window.removeEventListener('keydown', onKeyDownHandler);
-    };
-  });
 
   return (
     <button onClick={onClickHandler}

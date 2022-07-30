@@ -1,4 +1,5 @@
 import Letter from 'lib/Game/Letter';
+import {LETTERS} from 'lib/constants';
 
 type Props = {
   word: string,
@@ -8,7 +9,7 @@ type Props = {
 const Word = ({ word, lineIndex }: Props) => {
   return (
     <div className="flex gap-2 justify-center w-full">
-      {[...Array(5).keys()].map((index) => (
+      {[...Array(LETTERS).keys()].map((index) => (
         <Letter key={`${word}-${word[index] ?? ''}-${index}-${lineIndex}`} letter={word[index] ?? ''} />
       ))}
     </div>

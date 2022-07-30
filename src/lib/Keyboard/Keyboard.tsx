@@ -12,19 +12,21 @@ type Props = {
 }
 
 const Keyboard = ({ onKeyDown }: Props) => {
-  const onSpecialKeyDown = (e: KeyboardEvent) => {
+  const onKeyDownHandler = (e: KeyboardEvent) => {
     if (e.key === 'Backspace' || e.key === 'Enter') {
+      onKeyDown(e.key.toLowerCase());
+    } else if (ALPHABET.join('').replaceAll(/([\[\]])/gi, '').includes(e.key.toLowerCase())) {
       onKeyDown(e.key.toLowerCase());
     }
   };
 
   useEffect(() => {
-    window.addEventListener('keydown', onSpecialKeyDown);
+    window.addEventListener('keydown', onKeyDownHandler);
 
     return () => {
-      window.removeEventListener('keydown', onSpecialKeyDown);
+      window.removeEventListener('keydown', onKeyDownHandler);
     };
-  });
+  }, []);
 
   return (
     <div className="flex flex-col gap-2 mb-2 mx-2 flex-1">
