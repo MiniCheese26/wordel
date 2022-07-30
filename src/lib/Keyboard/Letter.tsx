@@ -43,9 +43,10 @@ const Letter = ({ letter, onKeyDown }: Props) => {
   });
 
   return (
-    <button onClick={onClickHandler} className={`flex justify-center items-center font-bold uppercase select-none  ${override
-      ? 'flex-[2]'
-      : 'flex-1'} text-sm md:text-md h-14 rounded-md bg-whiteHighlight hover:bg-whiteHighlightDim active:bg-whiteHighlightActive dark:bg-darkHighlight hover:dark:bg-darkHighlightDim active:dark:bg-darkHighlightActive hover:cursor-pointer`}>
+    <button onClick={onClickHandler}
+            className={`flex justify-center items-center font-bold uppercase select-none ${override
+              ? 'flex-[2]'
+              : 'flex-1'} text-sm md:text-md h-14 rounded-md bg-whiteHighlight hover:bg-whiteHighlightDim active:bg-whiteHighlightActive dark:bg-darkHighlight hover:dark:bg-darkHighlightDim active:dark:bg-darkHighlightActive hover:cursor-pointer`}>
       {override || letter}
     </button>
   );
