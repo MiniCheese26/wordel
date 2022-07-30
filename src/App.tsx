@@ -7,7 +7,7 @@ const App = () => {
         Nav
       </nav>
       <main className="flex flex-col flex-1 max-w-[500px] m-auto w-full">
-        <Game/>
+        <Game />
       </main>
     </div>
   );

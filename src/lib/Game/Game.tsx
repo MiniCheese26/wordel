@@ -4,7 +4,7 @@ import Keyboard from 'lib/Keyboard/Keyboard';
 const Game = () => {
   const onKeyDown = (letter: string) => {
     console.debug(letter);
-  }
+  };
 
   return (
     <>
@@ -12,10 +12,10 @@ const Game = () => {
         <Words />
       </div>
       <div className="flex items-center justify-center flex-1">
-        <Keyboard onKeyDown={onKeyDown}/>
+        <Keyboard onKeyDown={onKeyDown} />
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Game;
